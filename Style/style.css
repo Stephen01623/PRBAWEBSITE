@@ -62,11 +62,12 @@ body{
   background-color: var(--primary-color);
   color: white;
 }
+
 .navbar a{
     font-size: 15px;
-    color: var(--background-color);
+    color: var(--text-color);
     margin-left: 10rem;
-    font-weight: 500;
+    font-weight: 700;
     margin: 3rem 1rem;
     transition: 0.3s ease-in-out;
     border-bottom: 3px solid transparent;
@@ -77,6 +78,44 @@ body{
     transform: scale(1.1);
 }
 
+/* Dropdown menu inside navbar */
+.dropdown-nav {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  padding: 10px 15px;
+  display: inline-block;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.dropdown-content-nav {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  z-index: 99;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content-nav a {
+  display: block;
+  padding: 12px 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-content-nav a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.dropdown-nav:hover .dropdown-content-nav {
+  display: block;
+}
 
 .navbar .navbtn{
     display: inline-block;
@@ -566,6 +605,27 @@ footer {
   margin-top: 2rem;
   font-size: 0.9rem;
 }
+@media (max-width: 768px) {
+  .dropdown-nav {
+    width: 100%;
+  }
+
+  .dropdown-content-nav {
+    position: static;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .dropdown-content-nav a {
+    padding-left: 30px;
+    background-color: transparent;
+  }
+
+  .dropdown-nav:hover .dropdown-content-nav {
+    display: block;
+  }
+}
+
 
 @media(max-width:1000px){
      #menu-icon{
@@ -671,8 +731,14 @@ footer {
     .news-item h3 {
         font-size: 2rem;
     }
+
+    .gallery {
+        padding: 5rem 2%;
+        min-height: 30%;
+  
+    }
    .gallery h2 {
-        font-size: 4rem;
+        font-size: 5rem;
     }
     .swiper-slide img {
         height: 200px;
